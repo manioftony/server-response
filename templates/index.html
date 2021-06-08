@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Table 09</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/table-09/css/A.style.css.pagespeed.cf.XgDbNFMzAt.css">
+</head>
+<body>
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section">Show server Status</h2>
+
+
+<h3><button class="btn btn-warning" id="downloadid">Download</button></h3>
+
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="table-wrap">
+<table class="table table-striped" id="manikandan">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+{% for i in common %}
+<tr>
+    <th scope="row">{{i.id}}</th>
+    <td>{{i.name}}</td>
+    {% if i.status == True %}
+        <td><a href="#" class="btn btn-success">ON</a></td>
+    {% else %}
+        <td><a href="#" class="btn btn-danger">OFF</a></td>
+    {% endif %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script src="https://preview.colorlib.com/theme/bootstrap/table-09/js/jquery.min.js"></script>
+<script src="https://preview.colorlib.com/theme/bootstrap/table-09/js/popper.js+bootstrap.min.js+main.js.pagespeed.jc.eF4oxXGybC.js"></script><script>eval(mod_pagespeed_1ubagWZVDG);</script>
+<script>eval(mod_pagespeed_sHeX_56lIR);</script>
+<script>eval(mod_pagespeed_v54rJ2Fspg);</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"65b8b3a288321d3b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.5.2","si":10}'></script>
+
+
+<script type="text/javascript">
+var tableToExcel = (function() {
+  var uri = 'data:application/vnd.ms-excel;base64,'
+    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body><table>{table}</table></body></html>'
+    , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+    , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+  return function(table, name) {
+    if (!table.nodeType) table = document.getElementById('manikandan')
+    var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+    window.location.href = uri + base64(format(template, ctx))
+  }
+})()
+
+
+
+document.getElementById("downloadid").addEventListener("click", function() {
+  tableToExcel("data",'mani')
+});
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
